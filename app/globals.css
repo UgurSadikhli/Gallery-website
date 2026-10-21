@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --canvas: 14 13 12; --surface: 23 21 19; --ivory: 241 235 224; --gold: 201 161 91; --grain: 0.07; color-scheme: dark; }
+[data-theme='light'] { --canvas: 247 243 236; --surface: 255 255 255; --ivory: 28 25 23; --gold: 150 104 34; --grain: 0.045; color-scheme: light; }
+
+body { @apply bg-canvas text-ivory font-sans antialiased; transition: background-color .3s, color .3s; overflow-x: clip; }
+::selection { background: #c9a15b55; }
+/* film-grain overlay */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: var(--grain);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.input { @apply w-full rounded-lg border border-ivory/15 bg-canvas px-3 py-2 text-sm text-ivory outline-none transition focus:border-gold; }
+.label { @apply mb-1 block text-xs uppercase tracking-wider text-ivory/50; }
+.btn-gold { @apply rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-canvas transition hover:brightness-110 disabled:opacity-50; }
+.btn-ghost { @apply rounded-full border border-ivory/20 px-5 py-2.5 text-sm transition hover:bg-ivory/10; }

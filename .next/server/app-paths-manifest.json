@@ -1,0 +1,11 @@
+{
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/profile/route": "app/api/admin/profile/route.js",
+  "/api/admin/paintings/route": "app/api/admin/paintings/route.js",
+  "/api/paintings/[id]/image/route": "app/api/paintings/[id]/image/route.js",
+  "/page": "app/page.js",
+  "/api/profile/avatar/route": "app/api/profile/avatar/route.js",
+  "/painting/[id]/page": "app/painting/[id]/page.js",
+  "/api/admin/paintings/[id]/route": "app/api/admin/paintings/[id]/route.js",
+  "/about/page": "app/about/page.js"
+}
