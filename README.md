@@ -131,12 +131,7 @@ schema.sql                   # Database schema
 - **Uploads:** JPEG, PNG or WebP, up to 10 MB each, validated server-side.
 - **Security:** `HttpOnly` cookie auth, bcrypt password check, login rate limiting, parameterised SQL queries, admin routes protected by middleware.
 
-## Limitations
 
-- The rate limiter is in memory, so it works for a single server instance (use Redis if you scale out).
-- One admin account (configured in `.env`).
-- Painting titles and descriptions are stored in a single language, while the UI and the About bio are trilingual.
-- Storing images in PostgreSQL is simple and self-contained, but it grows the database; include it in your backups.
 
 ## Deployment checklist
 
